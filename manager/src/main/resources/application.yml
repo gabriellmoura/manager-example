@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: manager-service
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:managerdb;NON_KEYWORDS=manager
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+management:
+  endpoints:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: "*"
